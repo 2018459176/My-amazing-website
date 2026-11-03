@@ -42,3 +42,39 @@ footer {
     padding: 1rem;
     background: #ddd;
 }
+
+
+/* Weekly reflection cards */
+main section {
+    background: white;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+/* Headings */
+main h2 {
+    color: #24292e;
+    font-size: 26px;
+}
+
+main h3 {
+    color: #0366d6;
+    font-size: 21px;
+}
+
+/* Paragraphs */
+main p {
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+/* Charts and images */
+main img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 8px;
+}
