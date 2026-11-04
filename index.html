@@ -14,22 +14,57 @@
 </header>
     
 <main>
-  <section id="digital-practices">
-    <h2>Digital Practices Portfolio</h2>
-    <p>
-      This section documents my learning,
-      practical activities and reflections
-      from the Digital Practices module.
-    </p>
+  
+<section id="digital-practices" class="journey-home">
+  <p class="journey-label">✦ A LITTLE DIGITAL ADVENTURE ✦</p>
 
-    <h3>Weekly Reflections</h3>
-    <ul>
-      <li><a href="#week2">Week 2: Building My Website</a></li>
-      <li><a href="#week3">Week 3: Web Scraping</a></li>     
-      <li><a href="#week4">Week 4: Data Collection</a></li>
-      <li><a href="#week5">Week 5: Data Visualisation</a></li>
-    </ul>
-  </section>
+  <h2>My Digital Journey</h2>
+  <p class="journey-intro">
+    Every step is a little discovery.
+    Follow the footprints to explore my digital practices.
+  </p>
+
+  <div class="journey-map">
+    <svg class="journey-path" viewBox="0 0 340 600"
+         preserveAspectRatio="none" aria-hidden="true">
+      <path d="M85 60 C85 135 265 115 265 210
+               S80 270 80 370
+               S265 435 245 540" />
+    </svg>
+
+    <button class="map-stop stop-1" data-week="2">
+      <span class="stop-circle">02</span>
+      <strong>The Beginning</strong>
+      <small>Building My Website</small>
+    </button>
+
+    <button class="map-stop stop-2" data-week="3">
+      <span class="stop-circle">03</span>
+      <strong>The Exploration</strong>
+      <small>Web Scraping</small>
+    </button>
+
+    <button class="map-stop stop-3" data-week="4">
+      <span class="stop-circle">04</span>
+      <strong>The Discovery</strong>
+      <small>Data Collection</small>
+    </button>
+
+    <button class="map-stop stop-4" data-week="5">
+      <span class="stop-circle">05</span>
+      <strong>The Creation</strong>
+      <small>Data Visualisation</small>
+    </button>
+  </div>
+
+  <p id="journey-progress" class="journey-progress">
+    Your journey begins here ♡
+  </p>
+
+  <button id="view-all" class="view-all">
+    View All Reflections
+  </button>
+</section>
 
   <section id="week2">
     <h2>Week 2: Building My Website</h2>
@@ -270,5 +305,99 @@
   </section>
 </main>
 
-</body>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const weeks = [2, 3, 4, 5];
+    const stops = document.querySelectorAll(".map-stop");
+    const progress = document.getElementById("journey-progress");
+
+    let visited = new Set();
+
+    try {
+        const saved = JSON.parse(
+            localStorage.getItem("vicky-journey") || "[]"
+        );
+        visited = new Set(saved.filter(w => weeks.includes(w)));
+    } catch (error) {
+        visited = new Set();
+    }
+
+    function updateMap() {
+        stops.forEach(stop => {
+            const week = Number(stop.dataset.week);
+            stop.classList.toggle("completed", visited.has(week));
+            stop.classList.toggle(
+                "current",
+                !visited.has(week) &&
+                week === weeks.find(w => !visited.has(w))
+            );
+            stop.setAttribute(
+                "aria-label",
+                `Explore Week ${week}`
+            );
+        });
+
+        progress.textContent =
+            visited.size === 4
+            ? "Journey completed! ✦"
+            : `${visited.size} / 4 discoveries explored ♡`;
+    }
+
+    function explore(week) {
+        visited.add(week);
+
+        try {
+            localStorage.setItem(
+                "vicky-journey",
+                JSON.stringify([...visited])
+            );
+        } catch (error) {
+            // Continue without saved progress.
+        }
+
+        updateMap();
+        document.getElementById(`week${week}`)
+            ?.scrollIntoView({ behavior: "smooth" });
+    }
+
+    stops.forEach(stop => {
+        stop.addEventListener("click", () => {
+            explore(Number(stop.dataset.week));
+        });
+    });
+
+    weeks.forEach((week, index) => {
+        const section = document.getElementById(`week${week}`);
+        if (!section) return;
+
+        const button = document.createElement("button");
+        button.className = "next-step";
+
+        if (index < weeks.length - 1) {
+            button.textContent = "Next Step →";
+            button.addEventListener("click", () => {
+                explore(weeks[index + 1]);
+            });
+        } else {
+            button.textContent = "Back to Journey Map ♡";
+            button.addEventListener("click", () => {
+                document.getElementById("digital-practices")
+                    ?.scrollIntoView({ behavior: "smooth" });
+            });
+        }
+
+        section.appendChild(button);
+    });
+
+    document.getElementById("view-all")
+        ?.addEventListener("click", () => {
+            document.getElementById("week2")
+                ?.scrollIntoView({ behavior: "smooth" });
+        });
+
+    updateMap();
+});
+</script>
+/body>
 </html>
