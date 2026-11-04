@@ -160,3 +160,146 @@ footer {
         margin: 7px;
     }
 }
+
+
+/* Dreamy journey map */
+
+.journey-home {
+    text-align: center;
+    overflow: hidden;
+}
+
+.journey-label {
+    font-size: 12px !important;
+    letter-spacing: 3px;
+    color: #b996c9;
+}
+
+.journey-intro {
+    max-width: 500px;
+    margin: 0 auto;
+    color: #a08ca8;
+}
+
+.journey-map {
+    position: relative;
+    width: min(100%, 500px);
+    height: 650px;
+    margin: 25px auto;
+    background: linear-gradient(
+        180deg, #fffafd, #f9f3fc
+    );
+    border-radius: 30px;
+}
+
+.journey-path {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.journey-path path {
+    fill: none;
+    stroke: #d7bfe1;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 3 9;
+}
+
+.map-stop {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 7px;
+    width: 160px;
+    color: #826b91;
+    font-family: inherit;
+}
+
+.stop-circle {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #e9dff0;
+    border: 5px solid white;
+    box-shadow: 0 4px 18px #bda5c333;
+    font-size: 21px;
+    transition: all 0.3s ease;
+}
+
+.map-stop strong {
+    font-size: 13px;
+}
+
+.map-stop small {
+    font-size: 11px;
+    color: #a18eaa;
+}
+
+.map-stop:hover .stop-circle,
+.map-stop:focus-visible .stop-circle {
+    transform: scale(1.12);
+}
+
+.map-stop.completed .stop-circle {
+    background: #f4d5e7;
+}
+
+.map-stop.current .stop-circle {
+    background: #d8c2eb;
+    box-shadow: 0 0 0 7px #eadbf477;
+}
+
+.stop-1 { left: 25%; top: 10%; }
+.stop-2 { left: 78%; top: 35%; }
+.stop-3 { left: 24%; top: 61%; }
+.stop-4 { left: 72%; top: 88%; }
+
+.journey-progress {
+    color: #a78cb4;
+    font-size: 14px;
+}
+
+.view-all,
+.next-step {
+    border: 1px solid #e6d5eb;
+    background: #f6eaf7;
+    color: #826a90;
+    padding: 12px 22px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: inherit;
+    margin: 12px 0;
+}
+
+.view-all:hover,
+.next-step:hover {
+    background: #ecd9f0;
+}
+
+@media (max-width: 600px) {
+    .journey-map {
+        height: 580px;
+    }
+
+    .map-stop {
+        width: 125px;
+    }
+
+    .map-stop strong {
+        font-size: 12px;
+    }
+
+    .map-stop small {
+        font-size: 10px;
+    }
+}
