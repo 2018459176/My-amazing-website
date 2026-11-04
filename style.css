@@ -303,3 +303,74 @@ footer {
         font-size: 10px;
     }
 }
+
+
+/* Elegant journey title */
+
+header {
+    position: relative;
+    overflow: hidden;
+    padding: 75px 20px;
+}
+
+header h1 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(46px, 7vw, 82px);
+    font-weight: 600;
+    font-style: italic;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    color: #775c86;
+    max-width: 850px;
+    margin: 0 auto 24px;
+}
+
+header p {
+    font-size: 15px;
+    color: #a48da9;
+    letter-spacing: 0.3px;
+}
+
+/* Decorative floating stars */
+
+header::before,
+header::after {
+    content: "✧";
+    position: absolute;
+    color: #cda6d7;
+    pointer-events: none;
+    animation: floatingStar 4s ease-in-out infinite;
+}
+
+header::before {
+    top: 18%;
+    left: 12%;
+    font-size: 35px;
+}
+
+header::after {
+    content: "✦";
+    right: 13%;
+    bottom: 20%;
+    font-size: 22px;
+    animation-delay: 1.8s;
+}
+
+@keyframes floatingStar {
+    0%, 100% {
+        opacity: 0.35;
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        opacity: 0.9;
+        transform: translateY(-12px) rotate(12deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    header::before,
+    header::after {
+        animation: none;
+    }
+}
