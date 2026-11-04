@@ -374,3 +374,62 @@ header::after {
         animation: none;
     }
 }
+
+
+/* Minimal INS-style floating title */
+
+header {
+    position: relative;
+    padding: 80px 24px;
+    background: linear-gradient(
+        135deg,
+        #fcf7fc 0%,
+        #f3eafa 100%
+    );
+    overflow: hidden;
+}
+
+header h1 {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto 20px;
+    padding: 28px 40px;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(42px, 6vw, 76px);
+    font-style: italic;
+    font-weight: 600;
+    line-height: 1.1;
+    color: #795f88;
+
+    background: rgba(255, 255, 255, 0.35);
+    border: 1px solid #dfc6e6;
+    border-radius: 26px;
+
+    box-shadow: 0 12px 35px rgba(166, 128, 181, 0.08);
+
+    animation: titleFloat 5s ease-in-out infinite;
+}
+
+@keyframes titleFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+header p {
+    color: #a18ba9;
+    font-size: 15px;
+    margin-top: 25px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    header h1 {
+        animation: none;
+    }
+}
