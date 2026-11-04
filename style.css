@@ -433,3 +433,73 @@ header p {
         animation: none;
     }
 }
+/* Minimal animated decorations */
+
+header .hero-sparkle {
+    position: absolute;
+    z-index: 2;
+    color: #b894ca;
+    pointer-events: none;
+    opacity: 0;
+    animation: sparkleFade 6s ease-in-out infinite;
+}
+
+.sparkle-one {
+    top: 18%;
+    left: 12%;
+    font-size: 27px;
+    animation-delay: 0s !important;
+}
+
+.sparkle-two {
+    top: 35%;
+    right: 12%;
+    font-size: 17px;
+    animation-delay: 2s !important;
+}
+
+.sparkle-three {
+    bottom: 23%;
+    left: 17%;
+    font-size: 15px;
+    animation-delay: 4s !important;
+}
+
+@keyframes sparkleFade {
+    0%, 100% { opacity: 0; }
+    35%, 55% { opacity: 0.65; }
+}
+
+/* Delicate animated rose */
+
+header .hero-rose {
+    position: absolute;
+    right: 7%;
+    bottom: 12%;
+    width: 65px;
+    height: 72px;
+    color: #b69ac3;
+    opacity: 0;
+    pointer-events: none;
+    transform-origin: bottom center;
+    animation: roseFade 9s ease-in-out infinite;
+}
+
+@keyframes roseFade {
+    0%, 100% {
+        opacity: 0;
+        transform: rotate(-2deg);
+    }
+    40%, 60% {
+        opacity: 0.55;
+        transform: rotate(2deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    header .hero-sparkle,
+    header .hero-rose {
+        animation: none;
+        opacity: 0.4;
+    }
+}
