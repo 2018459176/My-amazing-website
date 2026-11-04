@@ -1,80 +1,162 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f4f4f4;
-    color: #333;
+
+/* Vicky's Digital Journey */
+
+:root {
+    --background: #fcf9fc;
+    --white: #ffffff;
+    --pink: #f5ddea;
+    --lavender: #e6daf5;
+    --purple: #aa8abd;
+    --text: #66576e;
+    --muted: #9e8da6;
 }
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+}
+
+/* Header */
 
 header {
-    background: #24292e;
-    color: white;
+    background: linear-gradient(
+        135deg,
+        #faf0f7,
+        #f0eafa
+    );
+    color: var(--text);
     text-align: center;
-    padding: 2rem;
+    padding: 75px 20px 65px;
 }
 
+header h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 0 0 18px;
+}
+
+header p {
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* Navigation */
+
 nav {
-    background: #0366d6;
-    padding: 1rem;
+    background: #ffffff;
     text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid #f1e7f2;
 }
 
 nav a {
-    color: white;
+    color: #9475a5;
     text-decoration: none;
     margin: 0 15px;
+    font-size: 14px;
+    transition: color 0.3s;
 }
+
+nav a:hover {
+    color: #d28cb7;
+}
+
+/* Main content */
 
 main {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+    max-width: 960px;
+    margin: 50px auto;
+    padding: 0 20px;
 }
 
+main section,
 .card {
-    background: white;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 5px;
-}
-
-footer {
-    text-align: center;
-    padding: 1rem;
-    background: #ddd;
-}
-
-
-/* Weekly reflection cards */
-main section {
-    background: white;
-    padding: 30px;
-    margin-bottom: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    background: var(--white);
+    padding: 35px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    border: 1px solid #f2eaf3;
+    box-shadow: 0 8px 30px rgba(150, 120, 160, 0.05);
 }
 
 /* Headings */
+
 main h2 {
-    color: #24292e;
-    font-size: 26px;
+    color: #795f88;
+    font-size: 28px;
+    margin-top: 0;
 }
 
 main h3 {
-    color: #0366d6;
+    color: #b38bbf;
     font-size: 21px;
 }
 
-/* Paragraphs */
+/* Text */
+
 main p {
-    line-height: 1.8;
     font-size: 16px;
+    line-height: 1.9;
 }
 
-/* Charts and images */
+main a {
+    color: #a37cb6;
+}
+
+main a:hover {
+    color: #d28cb7;
+}
+
+/* Images and charts */
+
 main img {
     display: block;
     max-width: 100%;
     height: auto;
-    margin: 20px auto;
-    border-radius: 8px;
+    margin: 25px auto;
+    border-radius: 12px;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 35px 20px;
+    background: #f5edf7;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    header {
+        padding: 55px 20px;
+    }
+
+    main {
+        margin: 25px auto;
+    }
+
+    main section,
+    .card {
+        padding: 22px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 7px;
+    }
 }
