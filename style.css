@@ -503,3 +503,16 @@ header .hero-rose {
         opacity: 0.4;
     }
 }
+
+
+/* Keep the decorative rose small */
+header svg.hero-rose {
+    position: absolute !important;
+    width: 55px !important;
+    height: 60px !important;
+    max-width: 55px !important;
+    right: 8% !important;
+    bottom: 12% !important;
+    display: block;
+    pointer-events: none;
+}
