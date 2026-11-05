@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<title>Week 3: Web Scraping | Vicky's Digital Journey</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css?v=3">
+
+</head>
+<body>
+
+
+<header>
+    <h1>Vicky's Digital Journey</h1>
+    <p>Exploring digital creativity, technology, and my learning journey.</p>
+
+    <!-- Minimal animated stars -->
+    <span class="hero-sparkle sparkle-one" aria-hidden="true">✧</span>
+    <span class="hero-sparkle sparkle-two" aria-hidden="true">✦</span>
+    <span class="hero-sparkle sparkle-three" aria-hidden="true">✧</span>
+
+    <!-- Minimal line-art rose -->
+    <svg class="hero-rose" viewBox="0 0 100 110" width="55" height="60"
+         style="position:absolute !important; width:55px !important; height:60px !important; right:8%; bottom:12%;"         fill="none" stroke="currentColor"
+         stroke-width="1.4" stroke-linecap="round"
+         stroke-linejoin="round" aria-hidden="true">
+        <path d="M48 45 C28 42 27 21 45 15 C58 8 75 21 69 37 C65 51 43 55 35 40 C27 27 41 17 53 23 C65 29 58 43 47 39 C40 36 43 29 49 29 C55 29 55 35 51 36"/>
+        <path d="M35 39 C22 33 19 46 32 53 C45 63 69 56 76 43 C83 31 75 23 69 24"/>
+        <path d="M52 56 C54 73 48 90 38 105"/>
+        <path d="M51 73 C32 61 21 69 20 79 C32 83 44 81 51 73"/>
+        <path d="M49 85 C64 72 77 76 82 85 C69 91 57 91 49 85"/>
+    </svg>
+</header>
+
+    
+<nav aria-label="Weekly reflections"><a href="index.html">♡ Journey Map</a><a href="week2.html">Week 2</a><a href="week3.html">Week 3</a><a href="week4.html">Week 4</a><a href="week5.html">Week 5</a></nav><main data-reflection-week="3">
+<section id="week3">
+  <h2>Week 3: Web Scraping</h2>
+
+  <h3>Exploring BBC iPlayer with Web Scraper</h3>
+
+  <p>
+    In Week 3, I explored web scraping using the
+    Web Scraper extension in Google Chrome.
+    I used BBC iPlayer as an example to understand
+    how information from a website can be collected
+    and organised into structured data.
+  </p>
+
+  <p>
+    During the workshop, I created a sitemap and
+    experimented with different selectors to
+    extract programme titles. I learned how
+    parent selectors and child selectors work
+    together to identify information on a webpage.
+    I also used the Data Preview function to
+    check whether the selected information
+    could be extracted correctly.
+  </p>
+
+  <p>
+    One of the main challenges was selecting
+    the correct HTML elements. At first,
+    some selectors returned empty results,
+    while others collected unrelated text.
+    After several adjustments, I was able
+    to preview programme information from
+    different sections of BBC iPlayer.
+  </p>
+
+  <p>
+    However, when I attempted to run the full
+    scraping process, the browser opened a
+    new page but no scraped data was saved.
+    This showed me that a successful data
+    preview does not necessarily mean that
+    an automated scraping task will work.
+    Dynamic website content and selector
+    configuration can affect the results.
+  </p>
+
+  <p>
+    This experience helped me understand that
+    web scraping requires testing, patience
+    and careful evaluation of data quality.
+    In future, I would like to improve my
+    understanding of CSS selectors and
+    learn how to troubleshoot scraping errors
+    more systematically.
+  </p>
+
+  <h3>Evidence of My Web Scraping Practice</h3>
+
+  <p>
+    The screenshot below shows the Data Preview
+    function displaying programme information
+    collected from BBC iPlayer during my practice.
+  </p>
+
+ <img src="bbc-scraping.png"
+     alt="BBC iPlayer web scraping data preview"
+     width="800">
+</section>
+<a class="next-step" href="week4.html">Next Step →</a>
+</main>
+<script src="journey.js?v=2"></script>
+</body>
+</html>

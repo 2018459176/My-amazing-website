@@ -574,3 +574,28 @@ header svg.hero-rose {
 .journey-map .stop-4 .stop-circle {
     background: #ddc8ef !important;
 }
+
+/* Navigation links retain the original button appearance. */
+a.map-stop { text-decoration: none; }
+a.view-all, a.next-step { display: inline-block; text-decoration: none; }
+nav a[aria-current="page"] { font-weight: bold; text-decoration: underline; }
+a:focus-visible { outline: 2px solid #795f88; outline-offset: 5px; }
+
+/* Week 4 record summary, using the existing pink and purple palette. */
+.record-summary { margin: 28px 0; padding: 24px; background: #fcf7fc; border: 1px solid #e6d5eb; border-radius: 20px; }
+.record-summary figcaption { color: #795f88; font-weight: 600; line-height: 1.6; }
+.record-bar { display: flex; height: 26px; border-radius: 999px; overflow: hidden; margin: 20px 0; }
+.bar-ahc { flex: 4; background: #d39abd; }
+.bar-non-ahc { flex: 4; background: #a88abd; }
+.bar-unknown { flex: 11; background: #ded5e5; }
+.record-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.record-table caption { text-align: left; line-height: 1.6; margin-bottom: 12px; font-size: 12px; }
+.record-table th, .record-table td { padding: 12px 5px; border-bottom: 1px solid #e6d5eb; text-align: right; }
+.record-table th:first-child { text-align: left; }
+.record-table tbody th { font-weight: 400; }
+.record-key { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 8px; }
+.key-ahc { background: #d39abd; }
+.key-non-ahc { background: #a88abd; }
+.key-unknown { background: #ded5e5; }
+main .source-note { font-size: 13px; line-height: 1.7; margin-bottom: 0; overflow-wrap: anywhere; }
+@media (max-width: 600px) { .record-summary { padding: 16px; } }
