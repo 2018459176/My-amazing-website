@@ -538,3 +538,31 @@ header svg.hero-rose {
     bottom: 12% !important;
     display: block;
     pointer-events: none;
+}
+
+/* Week 2–5 oval buttons */
+.journey-map .map-stop .stop-circle {
+    width: 112px !important;
+    height: 54px !important;
+    min-width: 112px !important;
+    min-height: 54px !important;
+    border-radius: 999px !important;
+
+    font-family: Arial, sans-serif !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    font-style: normal !important;
+    white-space: nowrap !important;
+}
+
+/* Pink: Week 2 and Week 4 */
+.journey-map .stop-1 .stop-circle,
+.journey-map .stop-3 .stop-circle {
+    background: #f3d6e8 !important;
+}
+
+/* Purple: Week 3 and Week 5 */
+.journey-map .stop-2 .stop-circle,
+.journey-map .stop-4 .stop-circle {
+    background: #ddc8ef !important;
+}
